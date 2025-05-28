@@ -9,9 +9,8 @@ export default function InterviewAssistant() {
   const wsRef = useRef(null);
   const mediaRecorderRef = useRef(null);
 
-  const ASSEMBLYAI_TOKEN = import.meta.env.VITE_ASSEMBLYAI_TOKEN;
   const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
-
+  const ASSEMBLYAI_TOKEN = import.meta.env.VITE_ASSEMBLYAI_TOKEN;
   const startListening = async () => {
     setListening(true);
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
