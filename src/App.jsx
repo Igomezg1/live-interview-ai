@@ -13,6 +13,8 @@ export default function InterviewAssistant() {
   const ASSEMBLYAI_TOKEN = import.meta.env.VITE_ASSEMBLYAI_TOKEN;
   const startListening = async () => {
     setListening(true);
+    console.log("Assembly token:", import.meta.env.VITE_ASSEMBLYAI_TOKEN);
+
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
 
     const ws = new WebSocket(`wss://api.assemblyai.com/v2/realtime/ws?sample_rate=16000&token=${ASSEMBLYAI_TOKEN}`);
